@@ -49,10 +49,43 @@ def iterresources(filenames):
 PARSERS = {}
 
 
+def _galactus_info(imagename):
+    # The Galactus project uses the following image naming convention:
+    #     wwwww-xxxxx-yyyyy-z
+    # where:
+    #     wwwww = project name (e.g. cdwlabs)
+    #     xxxxx = environment (e.g. test)
+    #     yyyyy = role (e.g. mesosmaster)
+    #     z     = instance number (e.g. 1, 2 or 3)
+    #
+    # example: cdwlabs-test-mesosmaster-1
+    image_project = None
+    image_env = None
+    image_role = None
+    image_instance = None
+
+    if imagename:
+        parts = imagename.split("-", 4)
+        parts += [None] * (4 - len(parts))
+        image_project = parts[0]
+        image_env = parts[1]
+        image_role = parts[2]
+        image_instance = parts[3]
+
+    return image_project, image_env, image_role, image_instance
+
+
 def _clean_dc(dcname):
     # Consul DCs are strictly alphanumeric with underscores and hyphens -
     # ensure that the consul_dc attribute meets these requirements.
     return re.sub('[^\w_\-]', '-', dcname)
+
+
+def iterhosts(resources):
+    '''yield host tuples of (name, attributes, groups)'''
+    for module_name, key, resource in resources:
+        resource_type, name = key.split('.', 1)
+
 
 
 def iterhosts(resources):
@@ -83,10 +116,15 @@ def calculate_mi_vars(func):
         name, attrs, groups = func(*args, **kwargs)
 
         # attrs
-        if attrs.get('role', '') == 'control':
+        image_role = attrs.get('role', '')
+
+        if (image_role == 'control' or image_role == 'consul'):
             attrs['consul_is_server'] = True
         else:
             attrs['consul_is_server'] = False
+
+        if (image_role == 'zookeeper' or image_role == 'mesosmaster'):
+            attrs['zookeeper_myid'] = attrs.get('index', 0) + 1
 
         # groups
         if attrs.get('publicly_routable', False):
@@ -150,14 +188,21 @@ def digitalocean_host(resource, tfvars=None):
     raw_attrs = resource['primary']['attributes']
     name = raw_attrs['name']
     groups = []
+    image_project, image_env, image_role, image_instance = _galactus_info(name)
+    inst_index = int(image_instance)
+
+    # handle possible missing user_data
+    my_meta = None
+    if 'user_data' in raw_attrs:
+        my_meta = json.loads(raw_attrs['user_data'])
 
     attrs = {
         'id': raw_attrs['id'],
         'image': raw_attrs['image'],
         'ipv4_address': raw_attrs['ipv4_address'],
         'locked': parse_bool(raw_attrs['locked']),
-        'metadata': json.loads(raw_attrs['user_data']),
-        'region': raw_attrs['region'],
+        'metadata': my_meta,
+        'dc': raw_attrs['region'],
         'size': raw_attrs['size'],
         'ssh_keys': parse_list(raw_attrs, 'ssh_keys'),
         'status': raw_attrs['status'],
@@ -169,26 +214,84 @@ def digitalocean_host(resource, tfvars=None):
         'public_ipv4': raw_attrs['ipv4_address'],
         'private_ipv4': raw_attrs['ipv4_address'],
         'provider': 'digitalocean',
+        'index': inst_index,
+        'role': image_role,
     }
 
-    # attrs specific to microservices-infrastructure
-    attrs.update({
-        'consul_dc': _clean_dc(attrs['metadata'].get('dc', attrs['region'])),
-        'role': attrs['metadata'].get('role', 'none')
-    })
 
     # add groups based on attrs
     groups.append('do_image=' + attrs['image'])
     groups.append('do_locked=%s' % attrs['locked'])
-    groups.append('do_region=' + attrs['region'])
+    groups.append('do_region=' + attrs['dc'])
     groups.append('do_size=' + attrs['size'])
     groups.append('do_status=' + attrs['status'])
-    groups.extend('do_metadata_%s=%s' % item
-                  for item in attrs['metadata'].items())
+    if attrs['metadata']:
+        groups.extend('do_metadata_%s=%s' % item
+                      for item in attrs['metadata'].items())
 
-    # groups specific to microservices-infrastructure
-    groups.append('role=' + attrs['role'])
-    groups.append('dc=' + attrs['consul_dc'])
+    # groups specific to galactus
+    groups.append(image_role)
+    groups.append(image_env)
+    groups.append(image_project)
+    groups.append(image_project + '_' + image_env)
+
+    return name, attrs, groups
+
+
+@parses('azure_instance')
+@calculate_mi_vars
+def azure_host(resource, tfvars=None):
+    raw_attrs = resource['primary']['attributes']
+    name = raw_attrs['name']
+    groups = []
+    image_project, image_env, image_role, image_instance = _galactus_info(name)
+    inst_index = int(image_instance)
+
+    # handle possible missing user_data
+    my_meta = None
+    if 'user_data' in raw_attrs:
+        my_meta = json.loads(raw_attrs['user_data'])
+
+    attrs = {
+        'id': raw_attrs['id'],
+        'image': raw_attrs['image'],
+        'ipv4_address': raw_attrs['vip_address'],
+        'metadata': my_meta,
+        'dc': raw_attrs['location'],
+        'size': raw_attrs['size'],
+        # azure-specific
+        'hosted_service_name': raw_attrs['hosted_service_name'],
+        'reverse_dns': raw_attrs['reverse_dns'],
+        'security_group': raw_attrs['security_group'],
+        'storage_service_name': raw_attrs['storage_service_name'],
+        'subnet': raw_attrs['subnet'],
+        'virtual_network': raw_attrs['virtual_network'],
+        # ansible
+        'ansible_ssh_host': raw_attrs['vip_address'],
+        'ansible_ssh_port': 22,
+        'ansible_ssh_user': raw_attrs['username'],
+        'ansible_ssh_pass': raw_attrs['password'],
+        # generic
+        'public_ipv4': raw_attrs['vip_address'],
+        'private_ipv4': raw_attrs['ip_address'],
+        'provider': 'azure',
+        'index': inst_index,
+        'role': image_role,
+    }
+
+    # add groups based on attrs
+    groups.append('azure_image=' + attrs['image'])
+    groups.append('azure_location=' + attrs['dc'])
+    groups.append('azure_size=' + attrs['size'])
+    if attrs['metadata']:
+        groups.extend('azure_metadata_%s=%s' % item
+                      for item in attrs['metadata'].items())
+
+    # groups specific to galactus
+    groups.append(image_role)
+    groups.append(image_env)
+    groups.append(image_project)
+    groups.append(image_project + '_' + image_env)
 
     return name, attrs, groups
 

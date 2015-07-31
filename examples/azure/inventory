@@ -1,0 +1,130 @@
+{
+    "cdwlabs": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "_meta": {
+        "hostvars": {
+            "cdwlabs-test-mesosmaster-2": {
+                "public_ipv4": "104.40.62.163", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "galactusOne1919", 
+                "id": "cdwlabs-test-mesosmaster-2", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "ansible_ssh_host": "104.40.62.163", 
+                "role": "mesosmaster", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.4", 
+                "metadata": null, 
+                "index": 2, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.62.163", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-test-mesosmaster-2", 
+                "reverse_dns": "", 
+                "zookeeper_myid": 3, 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-test-nsg-2", 
+                "virtual_network": "cdwlabs-test-network", 
+                "consul_is_server": false
+            }, 
+            "cdwlabs-test-mesosmaster-0": {
+                "public_ipv4": "104.40.58.21", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "galactusOne1919", 
+                "id": "cdwlabs-test-mesosmaster-0", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "ansible_ssh_host": "104.40.58.21", 
+                "role": "mesosmaster", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.6", 
+                "metadata": null, 
+                "index": 0, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.58.21", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-test-mesosmaster-0", 
+                "reverse_dns": "", 
+                "zookeeper_myid": 1, 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-test-nsg-2", 
+                "virtual_network": "cdwlabs-test-network", 
+                "consul_is_server": false
+            }, 
+            "cdwlabs-test-mesosmaster-1": {
+                "public_ipv4": "104.40.60.159", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "galactusOne1919", 
+                "id": "cdwlabs-test-mesosmaster-1", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "ansible_ssh_host": "104.40.60.159", 
+                "role": "mesosmaster", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.5", 
+                "metadata": null, 
+                "index": 1, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.60.159", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-test-mesosmaster-1", 
+                "reverse_dns": "", 
+                "zookeeper_myid": 2, 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-test-nsg-2", 
+                "virtual_network": "cdwlabs-test-network", 
+                "consul_is_server": false
+            }
+        }
+    }, 
+    "cdwlabs_test": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "mesosmaster": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "azure_size=Medium": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "azure_image=Ubuntu Server 14.04 LTS": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "test": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }, 
+    "azure_location=West US": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosmaster-2"
+        ]
+    }
+}

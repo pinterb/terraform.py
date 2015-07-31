@@ -1,0 +1,332 @@
+{
+    "do_locked=False": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "cdwlabs": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "_meta": {
+        "hostvars": {
+            "cdwlabs-test-mesosslave-0": {
+                "status": "active", 
+                "ansible_ssh_host": "104.131.62.27", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 0, 
+                "public_ipv4": "104.131.62.27", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "104.131.62.27", 
+                "ansible_ssh_user": "root", 
+                "role": "mesosslave", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.131.62.27", 
+                "size": "1gb", 
+                "id": "6366397", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-mesosslave-1": {
+                "status": "active", 
+                "ansible_ssh_host": "104.236.193.54", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 1, 
+                "public_ipv4": "104.236.193.54", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "104.236.193.54", 
+                "ansible_ssh_user": "root", 
+                "role": "mesosslave", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.236.193.54", 
+                "size": "1gb", 
+                "id": "6366405", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-mesosslave-2": {
+                "status": "active", 
+                "ansible_ssh_host": "45.55.171.226", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 2, 
+                "public_ipv4": "45.55.171.226", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "45.55.171.226", 
+                "ansible_ssh_user": "root", 
+                "role": "mesosslave", 
+                "provider": "digitalocean", 
+                "private_ipv4": "45.55.171.226", 
+                "size": "1gb", 
+                "id": "6366398", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-consul-0": {
+                "status": "active", 
+                "ansible_ssh_host": "104.131.91.254", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 0, 
+                "public_ipv4": "104.131.91.254", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": true, 
+                "ipv4_address": "104.131.91.254", 
+                "ansible_ssh_user": "root", 
+                "role": "consul", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.131.91.254", 
+                "size": "1gb", 
+                "id": "6366403", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-consul-1": {
+                "status": "active", 
+                "ansible_ssh_host": "45.55.229.38", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 1, 
+                "public_ipv4": "45.55.229.38", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": true, 
+                "ipv4_address": "45.55.229.38", 
+                "ansible_ssh_user": "root", 
+                "role": "consul", 
+                "provider": "digitalocean", 
+                "private_ipv4": "45.55.229.38", 
+                "size": "1gb", 
+                "id": "6366489", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-consul-2": {
+                "status": "active", 
+                "ansible_ssh_host": "104.236.212.165", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 2, 
+                "public_ipv4": "104.236.212.165", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": true, 
+                "ipv4_address": "104.236.212.165", 
+                "ansible_ssh_user": "root", 
+                "role": "consul", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.236.212.165", 
+                "size": "1gb", 
+                "id": "6366399", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-mesosmaster-2": {
+                "status": "active", 
+                "ansible_ssh_host": "104.236.203.179", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 2, 
+                "public_ipv4": "104.236.203.179", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "104.236.203.179", 
+                "zookeeper_myid": 3, 
+                "ansible_ssh_user": "root", 
+                "role": "mesosmaster", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.236.203.179", 
+                "size": "1gb", 
+                "id": "6366402", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-mesosmaster-0": {
+                "status": "active", 
+                "ansible_ssh_host": "104.236.57.125", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 0, 
+                "public_ipv4": "104.236.57.125", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "104.236.57.125", 
+                "zookeeper_myid": 1, 
+                "ansible_ssh_user": "root", 
+                "role": "mesosmaster", 
+                "provider": "digitalocean", 
+                "private_ipv4": "104.236.57.125", 
+                "size": "1gb", 
+                "id": "6366400", 
+                "metadata": null
+            }, 
+            "cdwlabs-test-mesosmaster-1": {
+                "status": "active", 
+                "ansible_ssh_host": "45.55.146.219", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "index": 1, 
+                "public_ipv4": "45.55.146.219", 
+                "image": "ubuntu-14-04-x64", 
+                "dc": "nyc3", 
+                "consul_is_server": false, 
+                "ipv4_address": "45.55.146.219", 
+                "zookeeper_myid": 2, 
+                "ansible_ssh_user": "root", 
+                "role": "mesosmaster", 
+                "provider": "digitalocean", 
+                "private_ipv4": "45.55.146.219", 
+                "size": "1gb", 
+                "id": "6366401", 
+                "metadata": null
+            }
+        }
+    }, 
+    "mesosslave": {
+        "hosts": [
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "cdwlabs_test": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "do_region=nyc3": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "consul": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1"
+        ]
+    }, 
+    "mesosmaster": {
+        "hosts": [
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1"
+        ]
+    }, 
+    "do_status=active": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "do_size=1gb": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "do_image=ubuntu-14-04-x64": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "test": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }
+}
