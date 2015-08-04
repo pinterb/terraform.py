@@ -59,6 +59,9 @@ def _galactus_info(imagename):
     #     z     = instance number (e.g. 1, 2 or 3)
     #
     # example: cdwlabs-test-mesosmaster-1
+    #
+    # NOTE: the image name is parsed right-to-left, with project name being
+    #       a concatenation of everything excluding the last three elements.
     image_project = None
     image_env = None
     image_role = None
@@ -66,11 +69,19 @@ def _galactus_info(imagename):
 
     if imagename:
         parts = imagename.split("-", 4)
-        parts += [None] * (4 - len(parts))
-        image_project = parts[0]
-        image_env = parts[1]
-        image_role = parts[2]
-        image_instance = parts[3]
+        num_of_parts = len(parts)
+
+        # ensure that we have at least 4 items
+        parts += [None] * (4 - num_of_parts)
+
+        # create are variables by working from the back of the list forward
+        image_instance = parts[num_of_parts-1]
+        image_role = parts[num_of_parts-2]
+        image_env = parts[num_of_parts-3]
+
+        # take the remaining parts and combine for project name
+        proj_parts = parts[:num_of_parts-3]
+        image_project = '-'.join(proj_parts)
 
     return image_project, image_env, image_role, image_instance
 
@@ -85,7 +96,6 @@ def iterhosts(resources):
     '''yield host tuples of (name, attributes, groups)'''
     for module_name, key, resource in resources:
         resource_type, name = key.split('.', 1)
-
 
 
 def iterhosts(resources):
@@ -233,7 +243,8 @@ def digitalocean_host(resource, tfvars=None):
     groups.append(image_role)
     groups.append(image_env)
     groups.append(image_project)
-    groups.append(image_project + '_' + image_env)
+    groups.append(image_project + '-' + image_env)
+    groups.append(attrs['provider'])
 
     return name, attrs, groups
 
@@ -291,7 +302,8 @@ def azure_host(resource, tfvars=None):
     groups.append(image_role)
     groups.append(image_env)
     groups.append(image_project)
-    groups.append(image_project + '_' + image_env)
+    groups.append(image_project + '-' + image_env)
+    groups.append(attrs['provider'])
 
     return name, attrs, groups
 
