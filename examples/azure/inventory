@@ -1,130 +1,718 @@
 {
-    "cdwlabs": {
-        "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
-        ]
-    }, 
     "_meta": {
         "hostvars": {
-            "cdwlabs-test-mesosmaster-2": {
-                "public_ipv4": "104.40.62.163", 
+            "cdwlabs-bigdata-test-consul-2": {
+                "galactus_instance": "2", 
+                "public_ipv4": "104.40.21.6", 
                 "image": "Ubuntu Server 14.04 LTS", 
                 "ansible_ssh_pass": "go#sand", 
-                "id": "cdwlabs-test-mesosmaster-2", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-consul-2", 
                 "size": "Medium", 
                 "subnet": "subnet1", 
-                "ansible_ssh_host": "104.40.62.163", 
-                "role": "mesosmaster", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.21.6", 
+                "role": "consul", 
                 "provider": "azure", 
-                "private_ipv4": "10.1.2.4", 
+                "private_ipv4": "10.1.2.7", 
                 "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
                 "index": 2, 
                 "dc": "West US", 
                 "storage_service_name": "galactus2", 
-                "ipv4_address": "104.40.62.163", 
+                "ipv4_address": "104.40.21.6", 
                 "ansible_ssh_port": 22, 
-                "hosted_service_name": "cdwlabs-test-mesosmaster-2", 
+                "hosted_service_name": "cdwlabs-bigdata-test-consul-2", 
                 "reverse_dns": "", 
-                "zookeeper_myid": 3, 
                 "ansible_ssh_user": "galactus", 
-                "security_group": "cdwlabs-test-nsg-2", 
-                "virtual_network": "cdwlabs-test-network", 
-                "consul_is_server": false
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
             }, 
-            "cdwlabs-test-mesosmaster-0": {
-                "public_ipv4": "104.40.58.21", 
+            "cdwlabs-bigdata-test-mesosmaster-1": {
+                "galactus_instance": "1", 
+                "public_ipv4": "104.40.21.45", 
                 "image": "Ubuntu Server 14.04 LTS", 
                 "ansible_ssh_pass": "go#sand", 
-                "id": "cdwlabs-test-mesosmaster-0", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-mesosmaster-1", 
                 "size": "Medium", 
                 "subnet": "subnet1", 
-                "ansible_ssh_host": "104.40.58.21", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.21.45", 
+                "role": "mesosmaster", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.10", 
+                "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 1, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.21.45", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-bigdata-test-mesosmaster-1", 
+                "reverse_dns": "", 
+                "zookeeper_myid": 2, 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "mesos_cluster_name": "cdwlabs-bigdata-test", 
+                "galactus_role": "mesosmaster", 
+                "consul_is_server": false
+            }, 
+            "cdwlabs-bigdata-test-mesosmaster-0": {
+                "galactus_instance": "0", 
+                "public_ipv4": "138.91.163.201", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "go#sand", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-mesosmaster-0", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "138.91.163.201", 
+                "role": "mesosmaster", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.11", 
+                "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 0, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "138.91.163.201", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-bigdata-test-mesosmaster-0", 
+                "reverse_dns": "", 
+                "zookeeper_myid": 1, 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "mesos_cluster_name": "cdwlabs-bigdata-test", 
+                "galactus_role": "mesosmaster", 
+                "consul_is_server": false
+            }, 
+            "cdwlabs-bigdata-test-mesosmaster-2": {
+                "galactus_instance": "2", 
+                "public_ipv4": "104.40.20.62", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "go#sand", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-mesosmaster-2", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.20.62", 
                 "role": "mesosmaster", 
                 "provider": "azure", 
                 "private_ipv4": "10.1.2.6", 
                 "metadata": null, 
-                "index": 0, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 2, 
                 "dc": "West US", 
                 "storage_service_name": "galactus2", 
-                "ipv4_address": "104.40.58.21", 
+                "ipv4_address": "104.40.20.62", 
                 "ansible_ssh_port": 22, 
-                "hosted_service_name": "cdwlabs-test-mesosmaster-0", 
+                "hosted_service_name": "cdwlabs-bigdata-test-mesosmaster-2", 
                 "reverse_dns": "", 
-                "zookeeper_myid": 1, 
+                "zookeeper_myid": 3, 
                 "ansible_ssh_user": "galactus", 
-                "security_group": "cdwlabs-test-nsg-2", 
-                "virtual_network": "cdwlabs-test-network", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "mesos_cluster_name": "cdwlabs-bigdata-test", 
+                "galactus_role": "mesosmaster", 
                 "consul_is_server": false
             }, 
-            "cdwlabs-test-mesosmaster-1": {
-                "public_ipv4": "104.40.60.159", 
+            "cdwlabs-bigdata-test-consul-1": {
+                "galactus_instance": "1", 
+                "public_ipv4": "23.99.9.108", 
                 "image": "Ubuntu Server 14.04 LTS", 
                 "ansible_ssh_pass": "go#sand", 
-                "id": "cdwlabs-test-mesosmaster-1", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-consul-1", 
                 "size": "Medium", 
                 "subnet": "subnet1", 
-                "ansible_ssh_host": "104.40.60.159", 
-                "role": "mesosmaster", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "23.99.9.108", 
+                "role": "consul", 
                 "provider": "azure", 
-                "private_ipv4": "10.1.2.5", 
+                "private_ipv4": "10.1.2.8", 
                 "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
                 "index": 1, 
                 "dc": "West US", 
                 "storage_service_name": "galactus2", 
-                "ipv4_address": "104.40.60.159", 
+                "ipv4_address": "23.99.9.108", 
                 "ansible_ssh_port": 22, 
-                "hosted_service_name": "cdwlabs-test-mesosmaster-1", 
+                "hosted_service_name": "cdwlabs-bigdata-test-consul-1", 
                 "reverse_dns": "", 
-                "zookeeper_myid": 2, 
                 "ansible_ssh_user": "galactus", 
-                "security_group": "cdwlabs-test-nsg-2", 
-                "virtual_network": "cdwlabs-test-network", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
+            }, 
+            "cdwlabs-bigdata-test-consul-0": {
+                "galactus_instance": "0", 
+                "public_ipv4": "104.40.19.199", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "go#sand", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-consul-0", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.19.199", 
+                "role": "consul", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.4", 
+                "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 0, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.19.199", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-bigdata-test-consul-0", 
+                "reverse_dns": "", 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
+            }, 
+            "cdwlabs-bigdata-test-mesosslave-1": {
+                "galactus_instance": "1", 
+                "public_ipv4": "104.40.22.75", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "go#sand", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-mesosslave-1", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.22.75", 
+                "role": "mesosslave", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.9", 
+                "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 1, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.22.75", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-bigdata-test-mesosslave-1", 
+                "reverse_dns": "", 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "mesos_cluster_name": "cdwlabs-bigdata-test", 
+                "galactus_role": "mesosslave", 
+                "consul_is_server": false
+            }, 
+            "cdwlabs-bigdata-test-mesosslave-0": {
+                "galactus_instance": "0", 
+                "public_ipv4": "104.40.17.34", 
+                "image": "Ubuntu Server 14.04 LTS", 
+                "ansible_ssh_pass": "go#sand", 
+                "galactus_env": "test", 
+                "id": "cdwlabs-bigdata-test-mesosslave-0", 
+                "size": "Medium", 
+                "subnet": "subnet1", 
+                "galactus_project": "cdwlabs-bigdata", 
+                "ansible_ssh_host": "104.40.17.34", 
+                "role": "mesosslave", 
+                "provider": "azure", 
+                "private_ipv4": "10.1.2.5", 
+                "metadata": null, 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-bigdata-test-mesosmaster-0", 
+                        "cdwlabs-bigdata-test-mesosmaster-1", 
+                        "cdwlabs-bigdata-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "104.40.19.199", 
+                        "23.99.9.108", 
+                        "104.40.21.6"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-bigdata-test-consul-0", 
+                        "cdwlabs-bigdata-test-consul-1", 
+                        "cdwlabs-bigdata-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_master_public_ips": [
+                        "138.91.163.201", 
+                        "104.40.21.45", 
+                        "104.40.20.62"
+                    ], 
+                    "consul_private_ips": [
+                        "10.1.2.4", 
+                        "10.1.2.8", 
+                        "10.1.2.7"
+                    ], 
+                    "mesos_slave_private_ips": [
+                        "10.1.2.5", 
+                        "10.1.2.9"
+                    ], 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-bigdata-test-mesosslave-0", 
+                        "cdwlabs-bigdata-test-mesosslave-1"
+                    ], 
+                    "mesos_slave_count": "2", 
+                    "mesos_master_private_ips": [
+                        "10.1.2.11", 
+                        "10.1.2.10", 
+                        "10.1.2.6"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.40.17.34", 
+                        "104.40.22.75"
+                    ]
+                }, 
+                "index": 0, 
+                "dc": "West US", 
+                "storage_service_name": "galactus2", 
+                "ipv4_address": "104.40.17.34", 
+                "ansible_ssh_port": 22, 
+                "hosted_service_name": "cdwlabs-bigdata-test-mesosslave-0", 
+                "reverse_dns": "", 
+                "ansible_ssh_user": "galactus", 
+                "security_group": "cdwlabs-bigdata-test-nsg-2", 
+                "virtual_network": "cdwlabs-bigdata-test-network", 
+                "mesos_cluster_name": "cdwlabs-bigdata-test", 
+                "galactus_role": "mesosslave", 
                 "consul_is_server": false
             }
         }
     }, 
-    "cdwlabs_test": {
+    "mesosslave": {
         "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1"
+        ]
+    }, 
+    "consul": {
+        "hosts": [
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
         ]
     }, 
     "mesosmaster": {
         "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2"
         ]
     }, 
     "azure_size=Medium": {
         "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
-        ]
-    }, 
-    "azure_image=Ubuntu Server 14.04 LTS": {
-        "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
         ]
     }, 
     "test": {
         "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
+        ]
+    }, 
+    "azure_image=Ubuntu Server 14.04 LTS": {
+        "hosts": [
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
+        ]
+    }, 
+    "azure": {
+        "hosts": [
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
+        ]
+    }, 
+    "cdwlabs-bigdata-test": {
+        "hosts": [
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
         ]
     }, 
     "azure_location=West US": {
         "hosts": [
-            "cdwlabs-test-mesosmaster-0", 
-            "cdwlabs-test-mesosmaster-1", 
-            "cdwlabs-test-mesosmaster-2"
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
+        ]
+    }, 
+    "cdwlabs-bigdata": {
+        "hosts": [
+            "cdwlabs-bigdata-test-mesosmaster-0", 
+            "cdwlabs-bigdata-test-mesosmaster-1", 
+            "cdwlabs-bigdata-test-mesosmaster-2", 
+            "cdwlabs-bigdata-test-mesosslave-0", 
+            "cdwlabs-bigdata-test-mesosslave-1", 
+            "cdwlabs-bigdata-test-consul-0", 
+            "cdwlabs-bigdata-test-consul-1", 
+            "cdwlabs-bigdata-test-consul-2"
         ]
     }
 }

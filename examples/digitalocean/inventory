@@ -28,205 +28,553 @@
     "_meta": {
         "hostvars": {
             "cdwlabs-test-mesosslave-0": {
-                "status": "active", 
-                "ansible_ssh_host": "104.131.62.27", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 0, 
-                "public_ipv4": "104.131.62.27", 
+                "galactus_instance": "0", 
+                "public_ipv4": "104.236.25.139", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "104.131.62.27", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449200", 
+                "size": "1gb", 
+                "index": 0, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.236.25.139", 
                 "role": "mesosslave", 
                 "provider": "digitalocean", 
-                "private_ipv4": "104.131.62.27", 
-                "size": "1gb", 
-                "id": "6366397", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.236.25.139", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosslave", 
+                "consul_is_server": false
             }, 
             "cdwlabs-test-mesosslave-1": {
-                "status": "active", 
-                "ansible_ssh_host": "104.236.193.54", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 1, 
-                "public_ipv4": "104.236.193.54", 
+                "galactus_instance": "1", 
+                "public_ipv4": "104.131.36.244", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "104.236.193.54", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449199", 
+                "size": "1gb", 
+                "index": 1, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.131.36.244", 
                 "role": "mesosslave", 
                 "provider": "digitalocean", 
-                "private_ipv4": "104.236.193.54", 
-                "size": "1gb", 
-                "id": "6366405", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.131.36.244", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosslave", 
+                "consul_is_server": false
             }, 
             "cdwlabs-test-mesosslave-2": {
-                "status": "active", 
-                "ansible_ssh_host": "45.55.171.226", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 2, 
-                "public_ipv4": "45.55.171.226", 
+                "galactus_instance": "2", 
+                "public_ipv4": "45.55.94.51", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "45.55.171.226", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449193", 
+                "size": "1gb", 
+                "index": 2, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "45.55.94.51", 
                 "role": "mesosslave", 
                 "provider": "digitalocean", 
-                "private_ipv4": "45.55.171.226", 
-                "size": "1gb", 
-                "id": "6366398", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "45.55.94.51", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosslave", 
+                "consul_is_server": false
             }, 
             "cdwlabs-test-consul-0": {
-                "status": "active", 
-                "ansible_ssh_host": "104.131.91.254", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 0, 
-                "public_ipv4": "104.131.91.254", 
+                "galactus_instance": "0", 
+                "public_ipv4": "45.55.150.41", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": true, 
-                "ipv4_address": "104.131.91.254", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449198", 
+                "size": "1gb", 
+                "index": 0, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "45.55.150.41", 
                 "role": "consul", 
                 "provider": "digitalocean", 
-                "private_ipv4": "104.131.91.254", 
-                "size": "1gb", 
-                "id": "6366403", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "45.55.150.41", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
             }, 
             "cdwlabs-test-consul-1": {
-                "status": "active", 
-                "ansible_ssh_host": "45.55.229.38", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 1, 
-                "public_ipv4": "45.55.229.38", 
+                "galactus_instance": "1", 
+                "public_ipv4": "104.236.52.207", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": true, 
-                "ipv4_address": "45.55.229.38", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449195", 
+                "size": "1gb", 
+                "index": 1, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.236.52.207", 
                 "role": "consul", 
                 "provider": "digitalocean", 
-                "private_ipv4": "45.55.229.38", 
-                "size": "1gb", 
-                "id": "6366489", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.236.52.207", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
             }, 
             "cdwlabs-test-consul-2": {
-                "status": "active", 
-                "ansible_ssh_host": "104.236.212.165", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 2, 
-                "public_ipv4": "104.236.212.165", 
+                "galactus_instance": "2", 
+                "public_ipv4": "104.131.16.0", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": true, 
-                "ipv4_address": "104.236.212.165", 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449194", 
+                "size": "1gb", 
+                "index": 2, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.131.16.0", 
                 "role": "consul", 
                 "provider": "digitalocean", 
-                "private_ipv4": "104.236.212.165", 
-                "size": "1gb", 
-                "id": "6366399", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.131.16.0", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "ansible_ssh_user": "root", 
+                "galactus_role": "consul", 
+                "consul_is_server": true
             }, 
             "cdwlabs-test-mesosmaster-2": {
+                "galactus_instance": "2", 
+                "public_ipv4": "45.55.135.177", 
+                "image": "ubuntu-14-04-x64", 
+                "galactus_env": "test", 
+                "id": "6449196", 
+                "size": "1gb", 
+                "index": 2, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "45.55.135.177", 
+                "role": "mesosmaster", 
+                "provider": "digitalocean", 
+                "metadata": null, 
                 "status": "active", 
-                "ansible_ssh_host": "104.236.203.179", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "45.55.135.177", 
                 "ansible_ssh_port": 22, 
                 "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 2, 
-                "public_ipv4": "104.236.203.179", 
-                "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "104.236.203.179", 
                 "zookeeper_myid": 3, 
                 "ansible_ssh_user": "root", 
-                "role": "mesosmaster", 
-                "provider": "digitalocean", 
-                "private_ipv4": "104.236.203.179", 
-                "size": "1gb", 
-                "id": "6366402", 
-                "metadata": null
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosmaster", 
+                "consul_is_server": false
             }, 
             "cdwlabs-test-mesosmaster-0": {
+                "galactus_instance": "0", 
+                "public_ipv4": "104.236.46.202", 
+                "image": "ubuntu-14-04-x64", 
+                "galactus_env": "test", 
+                "id": "6449192", 
+                "size": "1gb", 
+                "index": 0, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.236.46.202", 
+                "role": "mesosmaster", 
+                "provider": "digitalocean", 
+                "metadata": null, 
                 "status": "active", 
-                "ansible_ssh_host": "104.236.57.125", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.236.46.202", 
                 "ansible_ssh_port": 22, 
                 "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 0, 
-                "public_ipv4": "104.236.57.125", 
-                "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "104.236.57.125", 
                 "zookeeper_myid": 1, 
                 "ansible_ssh_user": "root", 
-                "role": "mesosmaster", 
-                "provider": "digitalocean", 
-                "private_ipv4": "104.236.57.125", 
-                "size": "1gb", 
-                "id": "6366400", 
-                "metadata": null
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosmaster", 
+                "consul_is_server": false
             }, 
             "cdwlabs-test-mesosmaster-1": {
-                "status": "active", 
-                "ansible_ssh_host": "45.55.146.219", 
-                "ansible_ssh_port": 22, 
-                "locked": false, 
-                "ssh_keys": [
-                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:36:37"
-                ], 
-                "index": 1, 
-                "public_ipv4": "45.55.146.219", 
+                "galactus_instance": "1", 
+                "public_ipv4": "104.236.225.25", 
                 "image": "ubuntu-14-04-x64", 
-                "dc": "nyc3", 
-                "consul_is_server": false, 
-                "ipv4_address": "45.55.146.219", 
-                "zookeeper_myid": 2, 
-                "ansible_ssh_user": "root", 
+                "galactus_env": "test", 
+                "id": "6449197", 
+                "size": "1gb", 
+                "index": 1, 
+                "ssh_keys": [
+                    "f0:a1:87:57:e6:f2:5a:55:e8:d7:26:57:8d:3a:51:99"
+                ], 
+                "galactus_project": "cdwlabs", 
+                "ansible_ssh_host": "104.236.225.25", 
                 "role": "mesosmaster", 
                 "provider": "digitalocean", 
-                "private_ipv4": "45.55.146.219", 
-                "size": "1gb", 
-                "id": "6366401", 
-                "metadata": null
+                "metadata": null, 
+                "status": "active", 
+                "galactus_meta": {
+                    "mesos_master_hostnames": [
+                        "cdwlabs-test-mesosmaster-0", 
+                        "cdwlabs-test-mesosmaster-1", 
+                        "cdwlabs-test-mesosmaster-2"
+                    ], 
+                    "consul_public_ips": [
+                        "45.55.150.41", 
+                        "104.236.52.207", 
+                        "104.131.16.0"
+                    ], 
+                    "consul_hostnames": [
+                        "cdwlabs-test-consul-0", 
+                        "cdwlabs-test-consul-1", 
+                        "cdwlabs-test-consul-2"
+                    ], 
+                    "consul_count": "3", 
+                    "mesos_master_count": "3", 
+                    "mesos_slave_hostnames": [
+                        "cdwlabs-test-mesosslave-0", 
+                        "cdwlabs-test-mesosslave-1", 
+                        "cdwlabs-test-mesosslave-2"
+                    ], 
+                    "mesos_slave_public_ips": [
+                        "104.236.25.139", 
+                        "104.131.36.244", 
+                        "45.55.94.51"
+                    ], 
+                    "mesos_slave_count": "3", 
+                    "mesos_master_public_ips": [
+                        "104.236.46.202", 
+                        "104.236.225.25", 
+                        "45.55.135.177"
+                    ]
+                }, 
+                "dc": "nyc3", 
+                "ipv4_address": "104.236.225.25", 
+                "ansible_ssh_port": 22, 
+                "locked": false, 
+                "zookeeper_myid": 2, 
+                "ansible_ssh_user": "root", 
+                "mesos_cluster_name": "cdwlabs-test", 
+                "galactus_role": "mesosmaster", 
+                "consul_is_server": false
             }
         }
     }, 
@@ -237,7 +585,7 @@
             "cdwlabs-test-mesosslave-1"
         ]
     }, 
-    "cdwlabs_test": {
+    "cdwlabs-test": {
         "hosts": [
             "cdwlabs-test-consul-2", 
             "cdwlabs-test-consul-0", 
@@ -304,6 +652,19 @@
         ]
     }, 
     "do_image=ubuntu-14-04-x64": {
+        "hosts": [
+            "cdwlabs-test-consul-2", 
+            "cdwlabs-test-consul-0", 
+            "cdwlabs-test-consul-1", 
+            "cdwlabs-test-mesosmaster-2", 
+            "cdwlabs-test-mesosmaster-0", 
+            "cdwlabs-test-mesosmaster-1", 
+            "cdwlabs-test-mesosslave-2", 
+            "cdwlabs-test-mesosslave-0", 
+            "cdwlabs-test-mesosslave-1"
+        ]
+    }, 
+    "digitalocean": {
         "hosts": [
             "cdwlabs-test-consul-2", 
             "cdwlabs-test-consul-0", 

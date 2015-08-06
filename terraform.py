@@ -42,8 +42,16 @@ def iterresources(filenames):
             state = json.load(json_file)
             for module in state['modules']:
                 name = module['path'][-1]
+                for tf_key, tf_value in module['outputs'].items():
+                    if ',' in tf_value:
+                        TF_OUTPUTS[tf_key] = tf_value.split(',')
+                    else:
+                        TF_OUTPUTS[tf_key] = tf_value
                 for key, resource in module['resources'].items():
                     yield name, key, resource
+
+## TERRAFORM OUTPUTS
+TF_OUTPUTS = {}
 
 ## READ RESOURCES
 PARSERS = {}
@@ -96,12 +104,6 @@ def iterhosts(resources):
     '''yield host tuples of (name, attributes, groups)'''
     for module_name, key, resource in resources:
         resource_type, name = key.split('.', 1)
-
-
-def iterhosts(resources):
-    '''yield host tuples of (name, attributes, groups)'''
-    for module_name, key, resource in resources:
-        resource_type, name = key.split('.', 1)
         try:
             parser = PARSERS[resource_type]
         except KeyError:
@@ -135,6 +137,10 @@ def calculate_mi_vars(func):
 
         if (image_role == 'zookeeper' or image_role == 'mesosmaster'):
             attrs['zookeeper_myid'] = attrs.get('index', 0) + 1
+
+        if (image_role == 'mesosslave' or image_role == 'mesosmaster'):
+            if 'galactus_project' in attrs:
+                attrs['mesos_cluster_name'] = attrs.get('galactus_project') + '-' + attrs.get('galactus_env')
 
         # groups
         if attrs.get('publicly_routable', False):
@@ -222,12 +228,20 @@ def digitalocean_host(resource, tfvars=None):
         'ansible_ssh_user': 'root',  # it's always "root" on DO
         # generic
         'public_ipv4': raw_attrs['ipv4_address'],
-        'private_ipv4': raw_attrs['ipv4_address'],
         'provider': 'digitalocean',
         'index': inst_index,
         'role': image_role,
+        # galactus
+        'galactus_role': image_role,
+        'galactus_project': image_project,
+        'galactus_env': image_env,
+        'galactus_instance': image_instance,
+        'galactus_meta': TF_OUTPUTS,
     }
 
+    # on digitalocean, private ips are opitional
+    if 'ipv4_address_private' in raw_attrs:
+        attrs['private_ipv4'] = raw_attrs['ipv4_address_private']
 
     # add groups based on attrs
     groups.append('do_image=' + attrs['image'])
@@ -288,6 +302,12 @@ def azure_host(resource, tfvars=None):
         'provider': 'azure',
         'index': inst_index,
         'role': image_role,
+        # galactus
+        'galactus_role': image_role,
+        'galactus_project': image_project,
+        'galactus_env': image_env,
+        'galactus_instance': image_instance,
+        'galactus_meta': TF_OUTPUTS,
     }
 
     # add groups based on attrs
